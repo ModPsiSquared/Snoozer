@@ -13,9 +13,13 @@ public class TimeLineFactoryTests {
         int w = 6;
         TimeLineFactory tlf = new TimeLineFactory(w, p);
         for (int i = 0; i < 13; i++) {
-            TimeLine lt = tlf.getTimeLine(i);
+            TimeLine tl = tlf.getTimeLine(i);
+            if (tl == null){
+                assertEquals(i, 13);
+                break;
+            }
 
-            float calculated = lt.getProbablityOfNotWaking();
+            float calculated = tl.getProbablityOfNotWaking();
             int power = i == 0 ? 1 : (3 + i) + (i == 12 ? 1 : 0);  //The otherwise continuous exponent jumps two at the last
             double expected = Math.pow(p, power);
 
