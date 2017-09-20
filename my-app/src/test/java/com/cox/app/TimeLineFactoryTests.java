@@ -12,7 +12,7 @@ public class TimeLineFactoryTests {
         float p = 0.8f;
         int w = 6;
         TimeLineFactory tlf = new TimeLineFactory(w, p);
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 13; i++) {
             TimeLine lt = tlf.getTimeLine(i);
 
             float calculated = lt.getProbablityOfNotWaking();
